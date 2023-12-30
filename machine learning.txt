@@ -49,7 +49,7 @@ ________________________________________________________________________________
 
 Logestic Regression 
 what logistic regression we end up doing is fit a curve that looks like this, S-shaped curve to this dataset. For this example, if a patient comes in with a tumor of this size, which I'm showing on the x-axis, then the algorithm will output 0.7 suggesting that is closer or maybe more likely to be malignant and benign. Will say more later what 0.7 actually means in this context. But the output label y is never 0.7 is only ever 0 or 1 . sigmoid fuction is used to build l0gistic regression
-
+________________
 Sigmoid Function
 If I use g of z to denote this function, then the formula of g of z is equal to 1 over 1 plus e to the negative z. Where here e is a mathematical constant that takes on a value of about 2.7, and so e to the negative z is that mathematical constant to the power of negative z.
 g(z)= 1/(1+e^(-z))
@@ -60,4 +60,26 @@ so lets make out legistic regression model
 f(w,b) =g(w.x+b)=1/(1+e^(-(w.x+b)))
 where g(w.x+b) = z
 
+For example, in this application, where x is the tumor size and y is either 0 or 1, if you have a patient come in and she has a tumor of a certain size x, and if based on this input x, the model I'll plus 0.7, then what that means is that the model is predicting or the model thinks there's a 70 percent chance that the true label y would be equal to 1 for this patient. In other words, the model is telling us that it thinks the patient has a 70 percent chance of the tumor turning out to be malignant. Now, let me ask you a question. See if you can get this right. We know that y has to be either 0 or 1, so if y has a 70 percent chance of being 1, what is the chance that it is 0? So y has got to be either 0 or 1, and thus the probability of it being 0 or 1 these two numbers have to add up to one or to a 100 percent chance. That's why if the chance of y being 1 is 0.7 or 70 percent chance, then the chance of it being 0 has got to be 0.3 or 30 percent chance. If someday you read research papers or blog pulls of all logistic regression, sometimes you see this notation that f of x is equal to p of y equals 1 given the input features x and with parameters w and b. What the semicolon here is used to denote is just that w and b are parameters that affect this computation of what is the probability of y being equal to 1 given the input feature x? For the purpose of this class, don't worry too much about what this vertical line and what the semicolon mean. 
 
+_________________________________
+Decision Boundary
+
+
+what you've seen here is that the model predicts 1 whenever w.x plus b is greater than or equal to 0. Conversely, when w.x plus b is less than zero,  
+
+in case of complexity use polynomial regression
+_________________________________
+Cost Function  
+
+j(w,b)=1/m(sum(L(fw,b(x^(i),y^(i))
+where fw,b (x^i,y^i) = loss
+it can be calculated using logistic log function
+
+logistic loss fuction  
+-log(fw,b(x^i)  	if y^i = 1
+-log(1-fw,b(x^i)) 	if y^i =0     in all these i symoblizes y of i 
+
+
+simplified cost function  
+jw,b= -1/m(sum([y[i]*log(fw,b(x[i]))+(i-y[i])*log(1-fw,b(x[i]))]))
