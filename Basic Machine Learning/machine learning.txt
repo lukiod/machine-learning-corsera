@@ -83,3 +83,22 @@ logistic loss fuction
 
 simplified cost function  
 jw,b= -1/m(sum([y[i]*log(fw,b(x[i]))+(i-y[i])*log(1-fw,b(x[i]))]))
+___________________________________
+gradient descent implementation
+
+
+
+
+_________________________________________________________________________
+Overfitting- fits the training sett extremely well - high variance
+
+undefit- when the data doesnt fit the training set well  - high bias
+generalization-fir the data pretty well
+
+______________________________________
+Adressing Overfitting 
+1.use selected  features 
+2. regularization
+______________________________________
+cost  function for regularization
+
