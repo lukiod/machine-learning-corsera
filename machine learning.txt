@@ -1,0 +1,104 @@
+supervise learning- learn from data labeled
+1. regression -Regression predicts a number among potentially infinitely possible numbers.
+2. classification -Classification predicts from among a limited set of categories (also called classes). These could be a limited set of numbers or labels such as "cat" or "dog". -  Breast cancer detection 
+lets take an example and labelled it as malignant and benign,predict a number infinitely many possible outputs
+
+unsupervised learning-data is not labelled 
+1. clustering: google news ,DNA microarray,Grouping coustomer  grouping similar points together
+Which is a type of unsupervised learning algorithm, takes data without labels and tries to automatically group them into clusters. And so maybe the next time you see or think of a panda, maybe you think of clustering as well. And besides clustering, there are other types of unsupervised learning as well. Let's go on to the next video, to take a look at some other types of unsupervised learning algorithms.
+
+2. Anomaly detection - find unusual datapoint
+
+3. dimenstionality reduction- compress data with fiewer number
+_____________________________________________________________________________________________________________________________
+Linear Regression - part of supervised regressive model 
+how to build a model
+traning set -> learning algorithm -> than functtion uhat is a predictation estimated y
+f(w,b)=mx+c;
+______________________________________________________________________________________________________________________________
+Cost-Function- used to measure the error 
+mostly used sqared error cost function
+intution -cost is a measure how well our model is predicting the target price of the house. The term 'price' is used for housing data.
+-------------------------
+visualization libraries
+import numpy as np
+%matplotlib widget
+import matplotlib.pyplot as plt
+from lab_utils_uni import plt_intuition, plt_stationary, plt_update_onclick, soup_bowl
+plt.style.use('./deeplearning.mplstyle')
+------------------------------------
+___________________________________________________________________________________________Gradient descent algo - what we do in this is we take baby steps to find out the minimum.
+w=w-a d/dw(J(w,b))  truth assignment  a= alpha=learning rate and how large a step should be tacken 
+if a is too small gradient descent may be slow 
+if a is too large it will overshoot and will not reach the minimum value and may fail to converge
+
+
+Gradient descent for linear regression model   
+may have multiple local minimum
+__________________________________________________________________________________________
+__________________________________________________________________________________________
+Multiple linear regression
+
+1 Vectorization- uh can use it to find dot product 
+2 gradient descent for multiple linear regreession- 
+	1. Automatic convergence test
+3. Feature Scalling 
+	1. z score 
+4.Polynomial regression
+__________________________________________________________________________________________
+
+Logestic Regression 
+what logistic regression we end up doing is fit a curve that looks like this, S-shaped curve to this dataset. For this example, if a patient comes in with a tumor of this size, which I'm showing on the x-axis, then the algorithm will output 0.7 suggesting that is closer or maybe more likely to be malignant and benign. Will say more later what 0.7 actually means in this context. But the output label y is never 0.7 is only ever 0 or 1 . sigmoid fuction is used to build l0gistic regression
+________________
+Sigmoid Function
+If I use g of z to denote this function, then the formula of g of z is equal to 1 over 1 plus e to the negative z. Where here e is a mathematical constant that takes on a value of about 2.7, and so e to the negative z is that mathematical constant to the power of negative z.
+g(z)= 1/(1+e^(-z))
+
+Notice if z where really be, say a 100, e to the negative z is e to the negative 100 which is a tiny number. So this ends up being 1 over 1 plus a tiny little number, and so the denominator will be basically very close to 1. Which is why when z is large, g of z that is a Sigmoid function of z is going to be very close to 1. Conversely, you can also check for yourself that when z is a very large negative number, then g of z becomes 1 over a giant number, which is why g of z is very close to 0
+
+so lets make out legistic regression model 
+f(w,b) =g(w.x+b)=1/(1+e^(-(w.x+b)))
+where g(w.x+b) = z
+
+For example, in this application, where x is the tumor size and y is either 0 or 1, if you have a patient come in and she has a tumor of a certain size x, and if based on this input x, the model I'll plus 0.7, then what that means is that the model is predicting or the model thinks there's a 70 percent chance that the true label y would be equal to 1 for this patient. In other words, the model is telling us that it thinks the patient has a 70 percent chance of the tumor turning out to be malignant. Now, let me ask you a question. See if you can get this right. We know that y has to be either 0 or 1, so if y has a 70 percent chance of being 1, what is the chance that it is 0? So y has got to be either 0 or 1, and thus the probability of it being 0 or 1 these two numbers have to add up to one or to a 100 percent chance. That's why if the chance of y being 1 is 0.7 or 70 percent chance, then the chance of it being 0 has got to be 0.3 or 30 percent chance. If someday you read research papers or blog pulls of all logistic regression, sometimes you see this notation that f of x is equal to p of y equals 1 given the input features x and with parameters w and b. What the semicolon here is used to denote is just that w and b are parameters that affect this computation of what is the probability of y being equal to 1 given the input feature x? For the purpose of this class, don't worry too much about what this vertical line and what the semicolon mean. 
+
+_________________________________
+Decision Boundary
+
+
+what you've seen here is that the model predicts 1 whenever w.x plus b is greater than or equal to 0. Conversely, when w.x plus b is less than zero,  
+
+in case of complexity use polynomial regression
+_________________________________
+Cost Function  
+
+j(w,b)=1/m(sum(L(fw,b(x^(i),y^(i))
+where fw,b (x^i,y^i) = loss
+it can be calculated using logistic log function
+
+logistic loss fuction  
+-log(fw,b(x^i)  	if y^i = 1
+-log(1-fw,b(x^i)) 	if y^i =0     in all these i symoblizes y of i 
+
+
+simplified cost function  
+jw,b= -1/m(sum([y[i]*log(fw,b(x[i]))+(i-y[i])*log(1-fw,b(x[i]))]))
+___________________________________
+gradient descent implementation
+
+
+
+
+_________________________________________________________________________
+Overfitting- fits the training sett extremely well - high variance
+
+undefit- when the data doesnt fit the training set well  - high bias
+generalization-fir the data pretty well
+
+______________________________________
+Adressing Overfitting 
+1.use selected  features 
+2. regularization
+______________________________________
+cost  function for regularization
+
