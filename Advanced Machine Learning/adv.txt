@@ -1,0 +1,4 @@
+Neural Network - speech recognation system , computer vision 
+
+how to create a layer of neurons??
+hidden layer
