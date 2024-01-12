@@ -2,3 +2,29 @@ Neural Network - speech recognation system , computer vision
 
 how to create a layer of neurons??
 hidden layer
+_______________________________________________
+model training step 
+1. specify how to compute output given input x 
+2. specify loss and cost 
+3. train on data to minimize cost
+___________________________
+Activation function 
+1.sigmoid
+2. relU
+3.Linear Activation Function
+________________________________
+How to Choose 
+If prediction is 0 or 1 tha sigmoid 
+if it contains float vale for example weather of tomoroe use linear regressioon function
+if it is 0 and + than reLu
+_______________________
+why do we need activation function??
+________________________________________________________________________________
+MultiClass Classification
+
+Multiclass classification refers to classification problems where you can have more than just two possible output labels so not just zero or 1
+____________________________
+SoftClass
+The softmax regression algorithm is a generalization of logistic regression, which is a binary classification algorithm to the multiclass classification contexts
+
+
